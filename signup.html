@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Pulse System Sign-Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Background image styling */
+        .background {
+            background: url('home.jpg') no-repeat center center/cover;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Navigation styling */
+        nav {
+            background-color: #033747;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            height: 75px;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            color: white;
+        }
+
+        nav ul {
+            display: inline-block;
+            list-style: none;
+            float: right;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #ff7f00;
+        }
+
+        /* Form container styling */
+        .form-container {
+            position: relative;
+            top: 80px; /* Offset to position below the nav bar */
+            margin: 0 auto;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            background-color: rgba(0, 0, 0, 0.6); /* Transparent background */
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .form-container h3 {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="number"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="date"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group input[type="tel"]:focus {
+            border-color: #ff7f00;
+            outline: none;
+        }
+
+        .form-group input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff7f00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #e96b00;
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff7f00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .signup-btn:hover {
+            background-color: #e96b00;
+            transform: scale(1.05);
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .signup-btn:active {
+            transform: scale(0.98);
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Confirmation Message Styling */
+        .confirmation-message {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 150, 0, 0.9);
+            color: white;
+            font-size: 24px;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <p>Perfect Pulse System</p>
+            </div>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-search"></i></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="newarrival.html">Schedules</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dietplans.html">Diet Plans</a></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <!-- Background Image -->
+    <div class="background"></div>
+    
+    <!-- Sign-Up Form Container -->
+    <div class="form-container" id="signupForm">
+        <h3>Sign Up for Perfect Pulse System</h3>
+
+        <form id="form" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="place">Place</label>
+                <input type="text" id="place" name="place" placeholder="Enter your city or place" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" onclick="window.location.href='enquiry.html'" class="signup-btn">Sign Up Now</button>
+            </div>
+        </form>
+
+        <a href="index.html" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+    <!-- Confirmation Message -->
+    <div class="confirmation-message" id="confirmationMessage">
+        <p>Thank you for signing up! We will be in touch soon.</p>
+    </div>
+
+    <!-- JavaScript for Form Validation -->
+    <script>
+        // Form Validation
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var dob = document.getElementById("dob").value;
+            var age = document.getElementById("age").value;
+            var place = document.getElementById("place").value;
+            var contact = document.getElementById("contact").value;
+
+            if (name == "" || dob == "" || age == "" || place == "" || contact == "") {
+                alert("Please fill in all fields.");
+                return false;
+            }
+
+            if (age < 18) {
+                alert("You must be at least 18 years old to sign up.");
+                return false;
+            }
+
+            var contactPattern = /^[0-9]{10}$/;
+            if (!contactPattern.test(contact)) {
+                alert("Please enter a valid 10-digit contact number.");
+                return false;
+            }
+
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+
+            return false;
+        }
+    </script>
+</body>
+</html>

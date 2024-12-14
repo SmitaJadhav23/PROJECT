@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ensuring navbar is on top */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            z-index: 10;
+            background-color: #033747; /* Semi-transparent for effect */
+            padding:0%;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        header nav .logo p {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        /* Adding padding to the body to ensure content is not hidden under the fixed navbar */
+        body {
+            padding-top: 65px; /* Adjust this value based on navbar height */
+        }
+
+        .box {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: fixed;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-container input, .form-container textarea, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #222;
+            color: white;
+        }
+
+        .form-container button {
+            background-color: #ff7f00;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <p>Perfect Pulse System</p>
+            </div>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-search"></i></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedules</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="dietplans.html">Diet Plans</a></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <div class="box">
+        <img src="home.jpg" alt="Gym Image">
+
+        <div class="form-container">
+            <h2>Enquiry Form</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+    
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+    
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+    
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+    
+                <label for="healthIssues">Any health issues (Blood Pressure, Diabetes, Asthma):</label>
+                <textarea id="healthIssues" name="healthIssues" rows="4"></textarea>
+    
+                <button type="submit" onclick="window.location.href='reccomendation.html'" class="signup-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
